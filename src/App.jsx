@@ -174,7 +174,10 @@ function App() {
         </div>
 
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route
+            path="/"
+            element={user ? <LandingPage /> : <Navigate to="/auth" replace />}
+          />
           <Route path="/images/:imageId" element={<ImageDetailPage />} />
           <Route
             path="/creator"
@@ -182,7 +185,7 @@ function App() {
               user?.role === "creator" ? (
                 <CreatorDashboard />
               ) : (
-                <Navigate to="/" />
+                <Navigate to={user ? "/" : "/auth"} replace />
               )
             }
           />
