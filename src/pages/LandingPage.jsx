@@ -4,11 +4,11 @@ import EmptyState from "../components/EmptyState";
 import ImageCard from "../components/ImageCard";
 import LoadingState from "../components/LoadingState";
 import SearchBar from "../components/SearchBar";
-import useImageFeed from "../hooks/useImageFeed";
+import imageFeed from "../libs/imageFeed";
 
-function HomePage() {
+function LandingPage() {
   const [query, setQuery] = useState("");
-  const { images, isLoading, errorMessage } = useImageFeed(query);
+  const { images, isLoading, errorMessage } = imageFeed(query);
 
   const summary = useMemo(() => {
     if (!images.length) return "No results";
@@ -72,4 +72,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default LandingPage;

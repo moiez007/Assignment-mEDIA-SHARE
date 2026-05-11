@@ -1,12 +1,12 @@
 import { NavLink, Route, Routes, Navigate } from "react-router-dom";
-import HomePage from "./pages/HomePage";
 import ImageDetailPage from "./pages/ImageDetailPage";
-import CreatorDashboardPage from "./pages/CreatorDashboardPage";
 import AuthPage from "./pages/AuthPage";
 import { Bell } from "lucide-react";
 import { useEffect, useState } from "react";
 import { fetchNotifications } from "./services/notificationService";
 import Button from "./components/Button";
+import LandingPage from "./pages/LandingPage";
+import CreatorDashboard from "./pages/CreatorDashboard";
 
 function App() {
   const [user, setUser] = useState(() => {
@@ -174,13 +174,13 @@ function App() {
         </div>
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/images/:imageId" element={<ImageDetailPage />} />
           <Route
             path="/creator"
             element={
               user?.role === "creator" ? (
-                <CreatorDashboardPage />
+                <CreatorDashboard />
               ) : (
                 <Navigate to="/" />
               )

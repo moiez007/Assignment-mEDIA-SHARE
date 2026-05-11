@@ -3,7 +3,7 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import Input from '../components/Input';
 import Textarea from '../components/Textarea';
-import { createImage } from '../services/imageService';
+import { createImage } from '../services/postService';
 
 const initialState = {
   imageFile: null,
@@ -13,7 +13,7 @@ const initialState = {
   people: ''
 };
 
-function CreatorDashboardPage() {
+function CreatorDashboard() {
   const [form, setForm] = useState(initialState);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -134,4 +134,4 @@ function CreatorDashboardPage() {
   );
 }
 
-export default CreatorDashboardPage;
+export default CreatorDashboard;

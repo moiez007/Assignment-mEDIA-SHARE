@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { fetchImages } from '../services/imageService';
-import useDebouncedValue from './useDebouncedValue';
+import { fetchImages } from '../services/postService';
+import fallbackValue from './fallbackValue';
 
-function useImageFeed(searchTerm) {
-  const debouncedSearch = useDebouncedValue(searchTerm, 300);
+function imageFeed(searchTerm) {
+  const debouncedSearch = fallbackValue(searchTerm, 300);
 
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -53,4 +53,4 @@ function useImageFeed(searchTerm) {
   return { images, isLoading, errorMessage };
 }
 
-export default useImageFeed;
+export default imageFeed;

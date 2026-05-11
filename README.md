@@ -20,7 +20,7 @@ The project is ready to connect to a REST backend through Axios and `VITE_API_BA
 src/
   components/
   data/
-  hooks/
+  libs/
   pages/
   services/
   styles/

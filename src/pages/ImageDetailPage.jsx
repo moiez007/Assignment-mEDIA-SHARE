@@ -11,7 +11,7 @@ import {
   addComment,
   fetchImageById,
   submitRating
-} from '../services/imageService';
+} from '../services/postService';
 
 function ImageDetailPage() {
   const { imageId } = useParams();
